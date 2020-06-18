@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basia</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="tablesorter/css/theme.green.css">
+
+
+
+
+</head>
+
+<body>
+    <nav class="fixed-top bg-info">
+        <div class="nav__left">
+            <a href="#">Strona główna</a>
+            <a href="http://lcieszynski.zut.edu.pl/fileadmin/DPD/instrukcja_2019.pdf">Instrukcja</a>
+        </div>
+        <div class="nav__right">
+            <button type="button" class="btn bg-light" data-toggle="modal" data-target="#exampleModal">
+                Koszyk
+            </button>
+
+        </div>
+    </nav>
+    <div class="container ">
+
+        <div class="row container-fluid">
+
+            <div class=" col-12 col-md-3  ">
+                
+            </div>
+            <div class="col-12 col-md-6 ">
+
+                <form class="form" action="">
+
+
+                    <div class="form-group">
+                        <label>Nazwa towaru:</label>
+                        <input type="text" class="form-control" id="towar_name" onBlur="sprawdzTowarName()">
+                        <div id="towar_name_blad"></div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Kod towaru:</label>
+                        <input type="text" class="form-control" id="towar_kod" onBlur="sprawdzTowarKod()">
+                        <div id="towar_kod_blad"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Cena netto:</label>
+                        <input type="text" class="form-control" id="towar_cnetto" onBlur="sprawdzTowarCnetto()">
+                        <div id="towar_cnetto_blad"></div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Stawka VAT:</label>
+                        <input type="text" class="form-control" id="towar_vat" onBlur="sprawdzTowarVat()">
+                        <div id="towar_vat_blad"></div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="towar_cbrutto">Cena brutto </label>
+                        <input type=" number" class="form-control" id="towar_cbrutto" placeholder="Kwotowa w złotówkach"
+                            readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Kategoria:</label>
+                        
+                        <select id="towar_kat" class="custom-select mr-sm-2" onchange="sprawdzTowarKat()">
+                            <option selected disabled value="">Wybierz kategorie...</option>
+                            <option value="1">Kategoria 1</option>
+                            <option value="2">Kategoria 2</option>
+                            <option value="3">Kategoria 3</option>
+                        </select>
+                        <div id="towar_kat_blad"></div>
+                    </div>
+
+
+                    <div onBlur="sprawdzTowarOpcje()" class="form-group">
+                        <label>Opcje towaru:</label>
+                        <div class="form-check">
+                            <input class="form-check-input towar_opcje" type="checkbox" id="opcja1" name="opcja"
+                                onchange="sprawdzTowarOpcje()">
+                            <label class="form-check-label" for="opcja1">
+                                Opcja 1
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input towar_opcje" type="checkbox" id="opcja2" name="opcja"
+                                onchange="sprawdzTowarOpcje()">
+                            <label class="form-check-label" for="opcja2">
+                                Opcja 2
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input towar_opcje" type="checkbox" id="opcja3" name="opcja"
+                                onchange="sprawdzTowarOpcje()">
+                            <label class="form-check-label" for="opcja3">
+                                Opcja 3
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input towar_opcje" type="checkbox" id="opcja4" name="opcja"
+                                onchange="sprawdzTowarOpcje()">
+                            <label class="form-check-label" for="opcja4">
+                                Opcja 4
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input towar_opcje" type="checkbox" id="opcja5" name="opcja"
+                                onchange="sprawdzTowarOpcje()">
+                            <label class="form-check-label" for="opcja5">
+                                Opcja 5
+                            </label>
+                        </div>
+                        <div id="towar_opcje_blad"></div>
+                    </div>
+
+                    Ocena towaru
+                    <div class="form-group">
+                        <div class=" form-check mt-2">
+                            <input class="form-check-input ocenaRadio" type="radio" name="ocena" value="1"
+                                onchange="sprawdzTowarOcena()">
+                            <label class="form-check-label" for="ocena1">
+                                1
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input ocenaRadio" type="radio" name="ocena" value="2"
+                                onchange="sprawdzTowarOcena()">
+                            <label class="form-check-label" for="ocena2">
+                                2
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input ocenaRadio" type="radio" name="ocena" value="3"
+                                onchange="sprawdzTowarOcena()">
+                            <label class="form-check-label" for="ocena3">
+                                3
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input ocenaRadio" type="radio" name="ocena" value="4"
+                                onchange="sprawdzTowarOcena()">
+                            <label class="form-check-label" for="ocena4">
+                                4
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input ocenaRadio" type="radio" name="ocena" value="5"
+                                onchange="sprawdzTowarOcena()">
+                            <label class="form-check-label" for="ocena5">
+                                5
+                            </label>
+                        </div>
+
+                        <div id="towar_ocena_blad"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="zdjecie_produktu">Zdjęcie prooduktu </label>
+                        <input type="number" class="form-control" id="zdjecie_produktu" name="zdjecie_produktu"
+                            placeholder="zdjecie.png" readonly>
+                    </div>
+               
+
+                    <button id="btn__submitform" type="submit" class="btn btn_form btn-primary m-2">Dodaj</button>
+
+
+                </form>
+            </div>
+
+            <div class="col-12 col-md-3   ">
+                <div class="card  card_wizytkowka" style="width: 18rem;">
+                    <img src="https://static1.redcart.pl/templates/images/thumb/19402/1500/1500/pl/0/templates/images/products/19402/036286faeba242b087198ece13dda804.jpg"  alt="Zdj"" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">Reklama</h5>
+                        <p class="card-text">Kup zabawki już dzisiaj!</p>
+                        <button href="#" class="btn btn-primary">Zapraszamy!</a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <div class="row container-fluid mt-3">
+
+
+            <select class="wybierzTypSortowaniaSelect">
+                <option>Filtruj</option>
+                <option>cena od najniższej</option>
+                <option>cena od najwyższej</option>
+                <option>ocena od najniższej</option>
+                <option>ocena od najwyżej</option>
+                <option>nazwa od A</option>
+                <option>nazwa od Z</option>
+            </select>
+			
+			
+			<button class="wczytajDane-button">Wczytaj dane</button>
+
+            <select class="wybierzWidok">
+                <option value=0>Widok tabeli</option>
+                <option value=1>Widok galerii</option>
+
+            </select>
+
+            <table id="myTable" class="tablesorter tablesorter-green">
+                <thead>
+                    <tr>
+                        <th>Nazwa towaru</th>
+                        <th class="sorter-false">Kod towaru</th>
+                        <th>Cena netto</th>
+                        <th class="sorter-false">Stawka Vat</th>
+                        <th class="sorter-false">Cena brutto</th>
+                        <th class="sorter-false">Kategoria</th>
+                        <th class="sorter-false">Opcje</th>
+                        <th>Ocena</th>
+                        <th class="sorter-false">Zdjęcie</th>
+                        <th class="sorter-false">Inne</th>
+                    </tr>
+                </thead>
+                <tbody id="myTableTbody">
+                    <tr>
+                        <td>Smith</td>
+                        <td>40-542</td>
+                        <td>45</td>
+                        <td>50</td>
+                        <td>50</td>
+                        <td>3</td>
+                        <td> opcja4</td>
+                        <td>3</td>
+                        <td> <img src="https://static1.redcart.pl/templates/images/thumb/19402/1500/1500/pl/0/templates/images/products/19402/036286faeba242b087198ece13dda804.jpg"></td>
+                        <td>
+                            <button id="0" onclick="usunWierszZtabeli(this)">Usuń</button>
+                            <button id="0" onclick="edytujWierszZtabeli(this)">Edytuj</button>
+                            <button id="0" onclick="dodajDoKoszyka(this)">Do koszyka</button>
+                        </td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+
+            <div class="gallery off">
+
+
+
+
+
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Koszyk - podsumowanie</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+
+                        <table class="koszykTable" style="width:100%">
+
+
+                        </table>
+
+                        <select class="dostawKoszykSelect">
+                            <option value="5">Poczta 7,00 zł</option>
+                            <option value="0">Odbior osobisty</option>
+                            <option value="10">Kurier 12,00 zł</option>
+                        </select>
+                        <span class="koszykCenaSuma"></span>
+
+
+                        <button id="koszyKUP">KUPUJĘ</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+    <footer class="sticky-footer bg-info text-dark">STOPKA</footer>
+
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+
+
+<!-- load jQuery and tablesorter scripts -->
+<!-- <script type="tablesortertext/javascript" src="tablesorter/js/jquery-latest.js"></script> -->
+<script type="text/javascript" src="tablesorter/js/jquery.tablesorter.js"></script>
+<!-- tablesorter widgets (optional) -->
+<script type="text/javascript" src="tablesorter/js/jquery.tablesorter.widgets.js"></script>
+
+<script src="js/validator.js"></script>
+
+
+<script>
+
+</script>
+
+</html>

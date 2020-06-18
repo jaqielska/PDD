@@ -1,0 +1,68 @@
+[
+    {
+        "nazwa": "xbox",
+        "kod": "d3-ff",
+        "cenanetto": "123",
+        "vat": "23",
+        "cenabrutto": "250.00",
+        "opcja": "opcja3, opcja4,",
+        "ocena": "3",
+        "kategoria": "2",
+        "img": "img/xbox.png"
+    },
+    {
+        "nazwa": "gitara",
+        "kod": "mx-ff",
+        "cenanetto": "523",
+        "vat": "23",
+        "cenabrutto": "480",
+        "opcja": "opcja4",
+        "ocena": "5",
+        "kategoria": "3",
+        "img": "img/gitara.jpg"
+    },
+    {
+        "nazwa": "pilka",
+        "kod": "d6-f5",
+        "cenanetto": "23",
+        "vat": "23",
+        "cenabrutto": "250.00",
+        "opcja": "opcja3, opcja4,",
+        "ocena": "4",
+        "kategoria": "2",
+        "img": "img/pilka.png"
+    },
+    {
+        "nazwa": "gitara2",
+        "kod": "kj-6f",
+        "cenanetto": "323",
+        "vat": "23",
+        "cenabrutto": "280",
+        "opcja": "opcja1",
+        "ocena": "5",
+        "kategoria": "3",
+        "img": "img/gitara.jpg"
+    },
+    {
+        "nazwa": "xbox3",
+        "kod": "d6-f5",
+        "cenanetto": "23",
+        "vat": "23",
+        "cenabrutto": "250.00",
+        "opcja": "opcja3, opcja4,",
+        "ocena": "4",
+        "kategoria": "2",
+        "img": "img/xbox.png"
+    },
+    {
+        "nazwa": "pilka 2",
+        "kod": "kj-6f",
+        "cenanetto": "323",
+        "vat": "23",
+        "cenabrutto": "280",
+        "opcja": "opcja1",
+        "ocena": "5",
+        "kategoria": "3",
+        "img": "img/pilka.png"
+    }
+]

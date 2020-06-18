@@ -1,0 +1,154 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+nav.fixed-top {
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+}
+
+.nav__left a {
+    padding: 10px;
+    color: black
+}
+
+.nav__left {
+    display: flex;
+}
+
+.nav__right {
+    display: flex;
+    align-items: center;
+}
+
+.nav__right .nav__butonCart {
+    border: 0;
+    border-bottom: 1px solid rgb(110, 105, 105);
+    background: 0;
+    height: 30px;
+}
+
+.nav__right .nav__butonCart img {
+    height: 20px;
+}
+
+.container {
+    min-height: 100vh;
+    padding-top: 80px;
+    padding-bottom: 40px;
+}
+
+.card_wizytkowka,
+.btn_form {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer {
+    padding: 20px;
+    background-color: black;
+    color: white
+}
+
+.d-block {
+    display: block;
+}
+
+
+
+
+/* //table */
+
+#myTable tr:hover{
+    background-color: beige;
+}
+
+
+.wybierzTypSortowaniaSelect{
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #007bff;
+    color:white;
+    border:0;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.wybierzTypSortowaniaSelect option{
+
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#myTableTbody tr img{
+    height: 80px;
+    width: 80px;
+}
+.modal-body button{
+    /* padding: 5px; */
+    background-color: #007bff;
+    color:white;
+    border:0;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.dostawKoszykSelect,
+.wczytajDane-button,
+.wybierzWidok
+{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    background-color: #007bff;
+    color:white;
+    border:0;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.wczytajDane-button{
+    margin-left: 5%;;
+    margin-right: 5%;;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+
+
+/* //galeriaa */
+
+.gallery{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.gallery_element{
+    width: 20%;
+    margin:10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .28);
+}
+
+.gallery_element:hover{
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, .48);
+}
+.off{
+    display: none;;
+}
+
+.gallery_element img{
+    max-width: 100%;height: auto;
+}
